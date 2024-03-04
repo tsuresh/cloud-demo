@@ -21,8 +21,6 @@ jobs:
     strategy:
       matrix:
         node-version: [19.x]
-        cache: 'npm'
-        cache-dependency-path: './backend/package-lock.json'
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -32,6 +30,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        cache-dependency-path: 'backend/package-lock.json'
     - run: npm ci
       working-directory: backend
     - run: npm run build --if-present
