@@ -6,6 +6,6 @@ const server = http.createServer((req, res) => {
   res.setHeader("Content-Type", "text/plain");
   res.end("Hello, IIT!\n CI/CD Workshop");
 });
-server.listen(port, hostname, () => 
+server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
